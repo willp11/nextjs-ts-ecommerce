@@ -6,7 +6,7 @@ interface MobileMenuProps {
     setNavTranslate: Dispatch<SetStateAction<string>>;
 }
 
-export default function MobileMenu({translate, setNavTranslate}: MobileMenuProps) {
+export default function MobileNav({translate, setNavTranslate}: MobileMenuProps) {
 
     const hideHandler = () : void => {
         setNavTranslate("-translate-x-full");
@@ -34,7 +34,7 @@ export default function MobileMenu({translate, setNavTranslate}: MobileMenuProps
     if (showLove) loveChrevron = <ChevronUpIcon className="h-6 w-6 cursor-pointer transition ease-in-out duration-300 stroke-black group-hover:stroke-blue-600" />
 
     return (
-        <div className={divClass}>
+        <nav className={divClass}>
             <div className="w-full flex flex-col">
                 <div className="w-full flex items-center justify-between px-4 pt-4 pb-0">
                     <div className="h-[80px] w-[200px] flex items-center justify-center border border-black">
@@ -91,6 +91,6 @@ export default function MobileMenu({translate, setNavTranslate}: MobileMenuProps
                     <p className="font-semibold text-base">Blog</p>
                 </div>
             </div>
-        </div>
+        </nav>
     )
 }
