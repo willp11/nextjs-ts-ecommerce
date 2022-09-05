@@ -1,0 +1,46 @@
+{
+    "necklaces": [
+        {
+            "name": "Stainless Steel Pendant with Sterling Silver",
+            "materials": [
+                "Sterling Silver",
+                "Stainless Steel"
+            ],
+            "categories": [
+                "Stainless Steel Jewelry",
+                "Necklaces"
+            ],
+            "price": 200
+        },
+        {
+            "name": "Stainless Steel Necklace with Ruby, Gold & Silver",
+            "materials": [
+                "Sterling Silver",
+                "Stainless Steel",
+                "18k Yellow Gold",
+                "14k Rose Gold"
+            ],
+            "categories": [
+                "Gold Jewelry",
+                "Silver Jewelry",
+                "Stainless Steel Jewelry",
+                "Gemstone Jewelry",
+                "Necklaces"
+            ],
+            "price": 400
+        },
+        {
+            "name": "Tiger Pendant with 18k Gold and Silver",
+            "materials": [
+                "Sterling Silver",
+                "18k Yellow Gold"
+            ],
+            "categories": [
+                "Gold Jewelry",
+                "Silver Jewelry",
+                "Necklaces"
+            ],
+            "price": 350
+        }
+    ]
+}

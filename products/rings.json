@@ -1,0 +1,113 @@
+{
+    "rings": [
+        {
+            "name": "Lab-Created Emerald Ring with Silver",
+            "materials": [
+                "92.5 Sterling Silver",
+                "5 mm Created Emerald"
+            ],
+            "categories": [
+                "Gemstone Jewelry",
+                "Rings"
+            ],
+            "price": 100
+        },
+        {
+            "name": "Wood Inlay Ring with Ebony Wood",
+            "materials": [
+                "92.5 Sterling Silver",
+                "Ebony Wood"
+            ],
+            "categories": [
+                "Silver Jewelry",
+                "Rings"
+            ],
+            "price": 80
+        },
+        {
+            "name": "Ruby Ring with Silver",
+            "materials": [
+                "92.5 Sterling Silver",
+                "2 mm gem stones x 15 (Ruby)"
+            ],
+            "categories": [
+                "Gemstone Jewelry",
+                "Rings"
+            ],
+            "price": 200
+        },
+        {
+            "name": "Diamond Eternity Band",
+            "materials": [
+                "18k White Gold",
+                "0.36 ct Diamonds"
+            ],
+            "categories": [
+                "Wedding Rings",
+                "Rings"
+            ],
+            "price": 1000
+        },
+        {
+            "name": "Diamond Ring Platinum Engagement Ring",
+            "materials": [
+                "950 Platinum",
+                "0.4 ct GIA certified diamond (Color E-F, Clarity VS1-VS2)",
+                "Total Diamonds 0.62 ct"
+            ],
+            "categories": [
+                "Engagement Rings",
+                "Rings"
+            ],
+            "price": 2000
+        },
+        {
+            "name": "Diamond Ring Platinum Engagement Ring",
+            "materials": [
+                "18k White Gold",
+                "0.5 ct Center Diamond",
+                "Total Diamonds 0.75 ct"
+            ],
+            "categories": [
+                "Engagement Rings",
+                "Rings"
+            ],
+            "price": 2500
+        },
+        {
+            "name": "Diamond Ring Platinum Engagement Ring",
+            "materials": [
+                "18k Yellow Gold",
+                "0.4 ct Center Diamond",
+                "Total Diamonds 0.58 ct"
+            ],
+            "categories": [
+                "Engagement Rings",
+                "Rings"
+            ],
+            "price": 1800
+        },
+        {
+            "name": "Blooming Gold Wedding Band",
+            "materials": [
+                "18k Yellow Gold"
+            ],
+            "categories": [
+                "Wedding Rings",
+                "Rings"
+            ],
+            "price": 800
+        },
+        {
+            "name": "Twist Men's Wedding Ring",
+            "materials": [
+                "14k White Gold"
+            ],
+            "categories": [
+                "Wedding Rings",
+                "Rings"
+            ],
+            "price": 650
+        }
+    ]
+}
