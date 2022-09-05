@@ -9,7 +9,8 @@
                 "Stainless Steel Jewelry",
                 "Earrings"
             ],
-            "price": 100
+            "price": 100,
+            "image": "/images/products/sterling-silver-earrings-with-created-emerald.webp"
         },
         {
             "name": "White Topaz Earrings with Silver",
@@ -22,7 +23,8 @@
                 "Gemstone Jewelry",
                 "Earrings"
             ],
-            "price": 400
+            "price": 400,
+            "image": "/images/products/sterling-silver-earrings-with-created-emerald.webp"
         },
         {
             "name": "Emerald Earrings with Silver",
@@ -35,7 +37,8 @@
                 "Gemstone Jewelry",
                 "Earrings"
             ],
-            "price": 400
+            "price": 400,
+            "image": "/images/products/sterling-silver-earrings-with-created-emerald.webp"
         }
     ]
 }
