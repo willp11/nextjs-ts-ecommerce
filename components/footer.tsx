@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Footer() {
     return (
         <div className="w-full">
-            <div className="w-full max-w-[1200px] mx-auto bg-white flex flex-col md:flex-row p-4 items-center md:items-start justify-between">
+            <div className="w-full max-w-[1200px] mx-auto bg-white flex flex-col lg:flex-row p-4 items-center md:items-start justify-between">
                 <div className="w-full p-4 lg:w-1/2 lg:mr-6">
                     <h2 className="text-2xl font-bold tracking-tight mb-4">About Nova</h2>
                     <p className="tracking-tight mb-4">Nova Collection Jewelry is one of Thailand’s leading independent jewelry shop and studio. Made with love from Chiang Mai.</p>
@@ -23,7 +23,7 @@ export default function Footer() {
                         <p className="font-semibold mb-2">Make an Appointment</p>
                     </div>
 
-                    <div className="w-full p-4 lg:w-1/2">
+                    <div className="w-full p-4 lg:w-[220px]">
                         <h2 className="text-2xl font-bold tracking-tight mb-4">Social</h2>
                         <p className="font-semibold mb-2">Like us on Facebook</p>
                         <p className="font-semibold mb-2">Follow us on Instagram</p>

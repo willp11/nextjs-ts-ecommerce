@@ -14,6 +14,12 @@ export default function Header() {
 
     const {cart} = useCart();
 
+    const [isSSR, setIsSSR] = useState(true);
+
+    useEffect(() => {
+        setIsSSR(false);
+    }, []);
+
     const [showSummary, setShowSummary] = useState<boolean>(false);
     const toggleShowSummary = () => {
         setShowSummary(!showSummary);
@@ -23,11 +29,6 @@ export default function Header() {
     const toggleShowSearch = () => {
         setShowSearch(!showSearch);
     }
-
-    useEffect(()=>{
-        // window.localStorage.clear()
-        console.log(cart)
-    }, [cart]);
 
     const router = useRouter();
     const [navTranslate, setNavTranslate] = useState("-translate-x-full");
@@ -47,11 +48,13 @@ export default function Header() {
                             alt="Logo"
                         />
                     </div>
-                    <div className="flex md:hidden items-center">
+                    <div className="flex md:hidden items-center justify-center">
                         <ShoppingCartIcon 
-                            className="h-6 w-6 mr-6 cursor-pointer transition ease-in-out duration-300 fill-black hover:fill-blue-600"
+                            className="h-6 w-6 cursor-pointer transition ease-in-out duration-300 fill-black hover:fill-blue-600"
                             onClick={toggleShowSummary}
                         />
+                        {!isSSR && <p className="ml-1 mr-6">({cart?.total_qty})</p>}
+
                         <MagnifyingGlassIcon 
                             className="h-6 w-6 mr-6 cursor-pointer transition ease-in-out duration-300 stroke-black hover:stroke-blue-600"
                             onClick={toggleShowSearch}
