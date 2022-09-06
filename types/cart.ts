@@ -1,12 +1,12 @@
 import { Product } from "./product";
 import { Dispatch } from "react";
 
-export interface CartItem extends Product {
+export interface ICartItem extends Product {
     quantity: number
 }
 
 export interface Cart {
-    items: {[key: string]: CartItem},
+    items: {[key: string]: ICartItem},
     value: number,
     total_qty: number   
 }

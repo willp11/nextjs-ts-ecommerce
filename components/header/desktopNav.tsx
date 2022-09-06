@@ -26,7 +26,7 @@ export default function DesktopNav() {
                         <ChevronDownIcon className="h-4 w-4 ml-2 cursor-pointer transition ease-in-out duration-300 stroke-black group-hover:stroke-blue-600" />
                     </div>
                     
-                    {insideJewelryTxt || insideJewelryDropdown && 
+                    {(insideJewelryTxt || insideJewelryDropdown) && 
                         <div 
                             className="absolute top-12 w-[400px] bg-white border border-gray-200 shadow-md flex flex-row justify-start z-10"
                             onMouseEnter={()=>setInsideJewelryDropdown(true)}
@@ -64,7 +64,7 @@ export default function DesktopNav() {
                         <ChevronDownIcon className="h-4 w-4 ml-2 cursor-pointer transition ease-in-out duration-300 stroke-black group-hover:stroke-blue-600" />
                     </div>
                     
-                    {insideLoveTxt || insideLoveDropdown && 
+                    {(insideLoveTxt || insideLoveDropdown) && 
                         <div 
                             className="absolute top-12 w-[200px] bg-white border border-gray-200 shadow-md flex flex-col items-start z-10"
                             onMouseEnter={()=>setInsideLoveDropdown(true)}

@@ -8,10 +8,15 @@ import { useRouter } from 'next/router';
 import Search from './search';
 import { useCart } from '../../hooks/useCart';
 import { useEffect } from 'react';
+import CartSummary from './cartSummary';
 
 export default function Header() {
 
     const {cart} = useCart();
+    const [showSummary, setShowSummary] = useState<boolean>(false);
+    const toggleShowSummary = () => {
+        setShowSummary(!showSummary);
+    }
 
     useEffect(()=>{
         // window.localStorage.clear()
@@ -37,7 +42,14 @@ export default function Header() {
                         />
                     </div>
                     <div className="flex md:hidden items-center">
-                        <ShoppingCartIcon className="h-6 w-6 mr-6 cursor-pointer transition ease-in-out duration-300 fill-black hover:fill-blue-600"/>
+                        <div className="relative">
+                            <ShoppingCartIcon 
+                                className="h-6 w-6 mr-6 cursor-pointer transition ease-in-out duration-300 fill-black hover:fill-blue-600"
+                                onClick={toggleShowSummary}
+                            />
+                            <CartSummary showSummary={showSummary} />
+                        </div>
+                        
                         <Search />
                         <Bars3Icon 
                             className="h-6 w-6 cursor-pointer transition ease-in-out duration-300 stroke-black hover:stroke-blue-600"
