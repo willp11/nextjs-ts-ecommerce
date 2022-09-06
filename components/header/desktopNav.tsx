@@ -26,7 +26,7 @@ export default function DesktopNav() {
                         <ChevronDownIcon className="h-4 w-4 ml-2 cursor-pointer transition ease-in-out duration-300 stroke-black group-hover:stroke-blue-600" />
                     </div>
                     
-                    {insideJewelryTxt || insideJewelryDropdown ? 
+                    {insideJewelryTxt || insideJewelryDropdown && 
                         <div 
                             className="absolute top-12 w-[400px] bg-white border border-gray-200 shadow-md flex flex-row justify-start z-10"
                             onMouseEnter={()=>setInsideJewelryDropdown(true)}
@@ -52,7 +52,6 @@ export default function DesktopNav() {
                                 <p className="dropdown-item">Stainless Steel</p>
                             </div>
                         </div>
-                        : null
                     }
                 </div>
                 <div 
@@ -65,7 +64,7 @@ export default function DesktopNav() {
                         <ChevronDownIcon className="h-4 w-4 ml-2 cursor-pointer transition ease-in-out duration-300 stroke-black group-hover:stroke-blue-600" />
                     </div>
                     
-                    {insideLoveTxt || insideLoveDropdown ? 
+                    {insideLoveTxt || insideLoveDropdown && 
                         <div 
                             className="absolute top-12 w-[200px] bg-white border border-gray-200 shadow-md flex flex-col items-start z-10"
                             onMouseEnter={()=>setInsideLoveDropdown(true)}
@@ -74,7 +73,6 @@ export default function DesktopNav() {
                             <p className="dropdown-item">Engagement Rings</p>
                             <p className="dropdown-item">Wedding Rings</p>
                         </div>
-                        : null
                     }
                 </div>
                 <div className="nav-item">
@@ -89,7 +87,6 @@ export default function DesktopNav() {
             </div>
             <div className="flex items-center pb-6">
                 <ShoppingCartIcon className="h-6 w-6 mr-6 cursor-pointer transition ease-in-out duration-300 fill-black hover:fill-blue-600"/>
-                {/* <MagnifyingGlassIcon className="h-6 w-6 cursor-pointer transition ease-in-out duration-300 stroke-black hover:stroke-blue-600"/> */}
                 <Search />
             </div>
         </nav>

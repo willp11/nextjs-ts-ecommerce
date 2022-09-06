@@ -1,8 +1,13 @@
 import products from '../products/products.json';
 import ProductsPage from '../components/productsPage';
 import Head from 'next/head';
+import { useEffect } from 'react';
 
 export default function Jewelry() {
+
+    useEffect(()=>{
+        console.log(products);
+    }, [])
 
     return (
         <>

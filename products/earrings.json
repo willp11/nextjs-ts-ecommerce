@@ -39,34 +39,6 @@
             ],
             "price": 400,
             "image": "/images/products/sterling-silver-earrings-with-created-emerald.webp"
-        },
-        {
-            "name": "Emerald Earrings with Silver",
-            "materials": [
-                "Sterling Silver",
-                "2x Emerald 4mm"
-            ],
-            "categories": [
-                "Silver Jewelry",
-                "Gemstone Jewelry",
-                "Earrings"
-            ],
-            "price": 400,
-            "image": "/images/products/sterling-silver-earrings-with-created-emerald.webp"
-        },
-        {
-            "name": "Emerald Earrings with Silver",
-            "materials": [
-                "Sterling Silver",
-                "2x Emerald 4mm"
-            ],
-            "categories": [
-                "Silver Jewelry",
-                "Gemstone Jewelry",
-                "Earrings"
-            ],
-            "price": 400,
-            "image": "/images/products/sterling-silver-earrings-with-created-emerald.webp"
         }
     ]
 }

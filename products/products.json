@@ -155,7 +155,7 @@
             "image": "/images/products/sterling-silver-earrings-with-created-emerald.webp"
         },
         {
-            "name": "Diamond Ring Platinum Engagement Ring",
+            "name": "Diamond White Gold Engagement Ring",
             "materials": [
                 "18k White Gold",
                 "0.5 ct Center Diamond",
@@ -169,7 +169,7 @@
             "image": "/images/products/sterling-silver-earrings-with-created-emerald.webp"
         },
         {
-            "name": "Diamond Ring Platinum Engagement Ring",
+            "name": "Diamond Yellow Gold Engagement Ring",
             "materials": [
                 "18k Yellow Gold",
                 "0.4 ct Center Diamond",
@@ -223,34 +223,6 @@
             "materials": [
                 "Sterling Silver",
                 "2x White Topax 4mm"
-            ],
-            "categories": [
-                "Silver Jewelry",
-                "Gemstone Jewelry",
-                "Earrings"
-            ],
-            "price": 400,
-            "image": "/images/products/sterling-silver-earrings-with-created-emerald.webp"
-        },
-        {
-            "name": "Emerald Earrings with Silver",
-            "materials": [
-                "Sterling Silver",
-                "2x Emerald 4mm"
-            ],
-            "categories": [
-                "Silver Jewelry",
-                "Gemstone Jewelry",
-                "Earrings"
-            ],
-            "price": 400,
-            "image": "/images/products/sterling-silver-earrings-with-created-emerald.webp"
-        },
-        {
-            "name": "Emerald Earrings with Silver",
-            "materials": [
-                "Sterling Silver",
-                "2x Emerald 4mm"
             ],
             "categories": [
                 "Silver Jewelry",
