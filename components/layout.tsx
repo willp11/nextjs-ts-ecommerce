@@ -1,4 +1,5 @@
-import Header from "./header/header"
+import Header from "./header/header";
+import Footer from "./footer";
 
 export default function Layout({
     children
@@ -8,7 +9,10 @@ export default function Layout({
     return (
         <div>
             <Header />
-            {children}
+            <div className="w-full min-h-[calc(100vh-6.5rem)] md:min-h-[calc(100vh-10.25rem)] bg-[#f0f4ff]">
+                {children}
+            </div>
+            <Footer />
         </div>
     )
 }

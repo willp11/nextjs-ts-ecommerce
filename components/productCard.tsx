@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function ProductCard({product}: {product: Product}) {
     return (
-        <div className="group h-[24rem] w-[18rem] bg-gray-50 m-2 border border-gray-300 rounded shadow-md">
+        <div className="group h-[24rem] w-[18rem] w-[300px] bg-gray-50 m-2 border border-gray-300 rounded shadow-md">
             <div className="h-2/3 w-full flex items-center justify-center cursor-pointer">
                 <div className="relative w-3/4 h-3/4 group-hover:transform group-hover:scale-125 group-hover:ease-in-out group-hover:duration-500">
                     <Image

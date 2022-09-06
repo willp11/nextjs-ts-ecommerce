@@ -1,6 +1,7 @@
 import {ShoppingCartIcon} from '@heroicons/react/20/solid';
 import {MagnifyingGlassIcon, ChevronDownIcon} from '@heroicons/react/24/outline';
 import { useState } from 'react';
+import { useRouter } from 'next/router';
 
 export default function DesktopNav() {
 
@@ -8,6 +9,8 @@ export default function DesktopNav() {
     const [insideJewelryDropdown, setInsideJewelryDropdown] = useState(false);
     const [insideLoveTxt, setInsideLoveTxt] = useState(false);
     const [insideLoveDropdown, setInsideLoveDropdown] = useState(false);
+
+    const router = useRouter();
 
     return (
         <nav className="hidden w-full md:flex items-center justify-between px-2 pt-1">
@@ -24,7 +27,7 @@ export default function DesktopNav() {
                     
                     {insideJewelryTxt || insideJewelryDropdown ? 
                         <div 
-                            className="absolute top-12 w-[400px] bg-white border border-gray-200 shadow-md flex flex-row justify-start"
+                            className="absolute top-12 w-[400px] bg-white border border-gray-200 shadow-md flex flex-row justify-start z-10"
                             onMouseEnter={()=>setInsideJewelryDropdown(true)}
                             onMouseLeave={()=>setInsideJewelryDropdown(false)}
                         >   
@@ -33,7 +36,12 @@ export default function DesktopNav() {
                                 <p className="dropdown-item">Rings</p>
                                 <p className="dropdown-item">Necklaces</p>
                                 <p className="dropdown-item">Bracelets</p>
-                                <p className="dropdown-item">Earrings</p>
+                                <p 
+                                    className="dropdown-item"
+                                    onClick={()=>router.push('/earrings')}
+                                >
+                                    Earrings
+                                </p>
                             </div>
                             <div className="flex flex-col items-start w-1/2">
                                 <p className="text-gray-500 py-1 pl-2">Shop By Metal</p>
@@ -58,7 +66,7 @@ export default function DesktopNav() {
                     
                     {insideLoveTxt || insideLoveDropdown ? 
                         <div 
-                            className="absolute top-12 w-[200px] bg-white border border-gray-200 shadow-md flex flex-col items-start"
+                            className="absolute top-12 w-[200px] bg-white border border-gray-200 shadow-md flex flex-col items-start z-10"
                             onMouseEnter={()=>setInsideLoveDropdown(true)}
                             onMouseLeave={()=>setInsideLoveDropdown(false)}
                         >

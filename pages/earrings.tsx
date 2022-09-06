@@ -1,21 +1,16 @@
 import earrings from '../products/earrings.json';
-import ProductCard from '../components/productCard';
-import { useEffect } from 'react';
+import ProductsPage from '../components/productsPage';
+import Head from 'next/head';
 
 export default function Earrings() {
 
-    useEffect(()=>{
-        console.log(earrings);
-    }, [])
-
-    let products = earrings.earrings.map((earring)=>{
-        return <ProductCard key={earring.name} product={earring} />
-    })
-
     return (
-        <div className="w-full max-w-[1200px] mx-auto flex items-center justify-center flex-wrap">
-            {products}
-            {products}
-        </div>
+        <>
+            <Head>
+                <title>Earrings</title>
+                <meta name="description" content="high-quality jewelry, earrings" />
+            </Head>
+            <ProductsPage title="Earrings" products={earrings.earrings} />
+        </>
     )
 }

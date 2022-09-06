@@ -3,5 +3,5 @@ export interface Product {
     materials: string[],
     categories: string[],
     price: number,
-    image: string
+    image?: string
 }

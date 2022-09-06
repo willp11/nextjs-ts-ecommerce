@@ -1,5 +1,7 @@
 import {XMarkIcon, ChevronDownIcon, ChevronUpIcon} from '@heroicons/react/24/outline';
 import { Dispatch, SetStateAction, useState } from "react";
+import Image from 'next/image';
+import { useRouter } from 'next/router';
 
 interface MobileMenuProps {
     translate: string,
@@ -7,6 +9,8 @@ interface MobileMenuProps {
 }
 
 export default function MobileNav({translate, setNavTranslate}: MobileMenuProps) {
+
+    const router = useRouter();
 
     const hideHandler = () : void => {
         setNavTranslate("-translate-x-full");
@@ -37,8 +41,16 @@ export default function MobileNav({translate, setNavTranslate}: MobileMenuProps)
         <nav className={divClass}>
             <div className="w-full flex flex-col">
                 <div className="w-full flex items-center justify-between px-4 pt-4 pb-0">
-                    <div className="h-[80px] w-[200px] flex items-center justify-center border border-black">
-                        <p>LOGO</p>
+                    <div
+                        onClick={()=>router.push('/')}
+                        className="relative h-[80px] w-[200px] flex items-center justify-center cursor-pointer"
+                    >
+                        <Image
+                            src="/images/Nova-Logo.svg"
+                            layout="fill"
+                            objectFit="contain"
+                            alt="Logo"
+                        />
                     </div>
                     <div className="flex items-center">
                         <XMarkIcon 
