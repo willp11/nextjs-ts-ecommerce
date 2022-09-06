@@ -15,7 +15,7 @@ export default function Search({showSearch}: {showSearch: boolean}) {
 
     return (
         <div className={`absolute z-10 right-0 p-4 w-[100vw] max-w-[500px] top-[7rem] md:top-[10rem]
-                        ${showSearch ? "flex" : "hidden"} flex items-center justify-center
+                        ${showSearch ? "flex" : "hidden"} flex flex-col items-center justify-center
                         bg-white border border-gray-300 rounded shadow-md`}
         >
             <form onSubmit={(e)=>submitSearch(e)}>  
@@ -27,7 +27,10 @@ export default function Search({showSearch}: {showSearch: boolean}) {
                         onChange={(e)=>setSearchQuery(e.target.value)}
                         value={searchQuery}
                     />
-                    <MagnifyingGlassIcon className="h-5 w-5 transition ease-in-out duration-300 stroke-black hover:stroke-blue-600 cursor-pointer" onClick={(e)=>submitSearch(e)}/>
+                    <MagnifyingGlassIcon 
+                        className="h-5 w-5 transition ease-in-out duration-300 stroke-black hover:stroke-blue-600 cursor-pointer" 
+                        onClick={(e)=>submitSearch(e)}
+                    />
                     <input type="submit" className="hidden" />
                 </div>
             </form>

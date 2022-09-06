@@ -16,6 +16,7 @@ export const getProductData = (id: string, products: Product[]) => {
 }
 
 export const searchProducts = (name: string, products: Product[]) => {
+    if (name === "") return [];
     // get all words in search term
     name = name.toLowerCase();
     const searchWords = name.split(" ");

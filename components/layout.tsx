@@ -14,8 +14,10 @@ export default function Layout({
     return (
         <div>
             <div className="relative w-full min-h-[100vh] bg-[#f0f4ff] flex flex-col justify-between">
-                <Header />
-                {children}
+                <div className="flex flex-col justify-start">
+                    <Header />
+                    {children}
+                </div>
                 <Footer />
                 <UpdateCartMsg message={message} />
             </div>

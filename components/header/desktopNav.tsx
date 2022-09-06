@@ -44,15 +44,11 @@ export default function DesktopNav(
                         >   
                             <div className="flex flex-col items-start w-1/2">
                                 <p className="text-gray-500 py-1 pl-2">Shop By Category</p>
+                                <p className="dropdown-item" onClick={()=>router.push('/jewelry')}>All</p>
                                 <p className="dropdown-item">Rings</p>
                                 <p className="dropdown-item">Necklaces</p>
                                 <p className="dropdown-item">Bracelets</p>
-                                <p 
-                                    className="dropdown-item"
-                                    onClick={()=>router.push('/earrings')}
-                                >
-                                    Earrings
-                                </p>
+                                <p className="dropdown-item" onClick={()=>router.push('/earrings')}>Earrings</p>
                             </div>
                             <div className="flex flex-col items-start w-1/2">
                                 <p className="text-gray-500 py-1 pl-2">Shop By Metal</p>

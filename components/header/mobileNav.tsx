@@ -26,6 +26,11 @@ export default function MobileNav({translate, setNavTranslate}: MobileMenuProps)
         setShowLove(!showLove);
     }
 
+    const handleNavigate = (url: string) => {
+        hideHandler();
+        router.push(url);
+    }
+
     // main component's class
     let divClass = `fixed top-0 left-0 ${translate} md:-translate-x-full
         z-20 w-full h-screen bg-white border border-gray-300
@@ -68,10 +73,11 @@ export default function MobileNav({translate, setNavTranslate}: MobileMenuProps)
                     <div className="w-full flex justify-start px-2 bg-gray-50">
                         <div className="flex flex-col items-start w-1/2">
                             <p className="text-gray-500 text-sm font-semibold py-1 pl-2">Shop By Category</p>
+                            <p className="dropdown-item-mobile-menu" onClick={()=>handleNavigate('/jewelry')}>All</p>
                             <p className="dropdown-item-mobile-menu">Rings</p>
                             <p className="dropdown-item-mobile-menu">Necklaces</p>
                             <p className="dropdown-item-mobile-menu">Bracelets</p>
-                            <p className="dropdown-item-mobile-menu">Earrings</p>
+                            <p className="dropdown-item-mobile-menu" onClick={()=>handleNavigate('/earrings')}>Earrings</p>
                         </div>
                         <div className="flex flex-col items-start w-1/2">
                             <p className="text-gray-500 text-sm font-semibold py-1 pl-2">Shop By Metal</p>
