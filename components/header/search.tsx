@@ -1,15 +1,16 @@
 import {MagnifyingGlassIcon} from '@heroicons/react/24/outline';
-// import { useRouter } from 'next/router';
+import { useRouter } from 'next/router';
 import { useState } from 'react';
 
 export default function Search({showSearch}: {showSearch: boolean}) {
 
-    // const router = useRouter();
+    const router = useRouter();
 
     const [searchQuery, setSearchQuery] = useState<string>("");
 
     const submitSearch = (e: any) => {
-        console.log("search");
+        e.preventDefault();
+        router.push(`/product/search?product=${searchQuery}`)
     }
 
     return (

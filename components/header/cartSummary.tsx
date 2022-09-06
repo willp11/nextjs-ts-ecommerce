@@ -25,12 +25,12 @@ export default function CartSummary({showSummary}: {showSummary: boolean}) {
 
     if (!isSSR) { 
         return (
-            <div className={`absolute right-0 z-20 p-4 w-[100vw] max-w-[500px] top-[7rem] md:top-[10rem]
-                            ${showSummary ? "flex" : "hidden"} flex-col items-center justify-center
-                            bg-white border border-gray-300 dark:bg-slate-700 dark:border-gray-600 rounded shadow-md`}>
-                {cart?.total_qty === 0 && <p className="text-base p-2 text-gray-400 dark:text-gray-100">Your cart is currently empty.</p>}
+            <div className={`absolute right-0 z-20 p-4 w-[100vw] max-w-[500px] max-h-[500px] overflow-auto top-[7rem] md:top-[10rem]
+                            ${showSummary ? "flex" : "hidden"} flex-col items-center
+                            bg-white border border-gray-300 rounded shadow-md`}>
+                {cart?.total_qty === 0 && <p className="text-base p-2 text-gray-400">Your cart is currently empty.</p>}
                 {cart?.total_qty !== 0 && <button 
-                                            className="text-base p-2 rounded bg-red-600 text-sm text-white font-semibold dark:text-gray-100 cursor-pointer hover:bg-red-700 transition ease-in-out duration-300"
+                                            className="text-base p-2 rounded bg-red-600 text-sm text-white font-semibold cursor-pointer hover:bg-red-700 transition ease-in-out duration-300"
                                             onClick={clearCart}
                                         >
                                             Clear All
