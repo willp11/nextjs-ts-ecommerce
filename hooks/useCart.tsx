@@ -2,7 +2,7 @@ import React, { ReactNode, useContext, useMemo, Reducer, Dispatch } from "react"
 import useLocalStorageReducer from "./useLocalStorageReducer";
 import { Product } from "../types/product";
 import { Cart, UpdateCartAction, ICartContext } from "../types/cart";
-// import { useMessage } from "./useMessage";
+import { useMessage } from "./useMessage";
 
 const initialCart: Cart = {
     items: {},
@@ -95,20 +95,21 @@ export const useCart = () => {
         dispatch = contextValue.dispatch;
     }
 
-    // const { setMessage } = useMessage();
+    const { setMessage } = useMessage();
+    // console.log(setMessage)
 
     const addItem = (product: Product, quantity: number) => {
         if (dispatch) dispatch({type: "ADD_ITEM", product, quantity});
-        // setMessage("Item added to cart");
+        if (setMessage) setMessage("Item added to cart");
     }
     const removeItem = (product: Product, quantity: number) => {
         if (dispatch) dispatch({type: "REMOVE_ITEM", product, quantity});
-        // setMessage("Item removed from cart");
+        if (setMessage) setMessage("Item removed from cart");
     }
 
     const clearCart = () => {
         if (dispatch) dispatch({type: "CLEAR_CART"});
-        // setMessage("Item removed from cart");
+        if (setMessage) setMessage("Item removed from cart");
     }
     
     // Don't show the item removed from cart message when user has successfully paid

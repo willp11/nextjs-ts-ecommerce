@@ -1,6 +1,7 @@
 import { CheckCircleIcon, XCircleIcon } from "@heroicons/react/24/outline";
 
-export default function UpdateCartMsg({message}: {message: string}) {
+export default function UpdateCartMsg({message}: {message: string | undefined}) {
+
     let icon = null;
     if (message === "Item added to cart") {
         icon = <CheckCircleIcon className="h-6 w-6 stroke-green-600" />
@@ -8,7 +9,7 @@ export default function UpdateCartMsg({message}: {message: string}) {
         icon = <XCircleIcon className="h-6 w-6 stroke-red-600" />
     }
 
-    if (message !== "") {
+    if (message !== "" && message !== undefined) {
         return (
             <div 
                 className={`fixed top-3 left-1/2 -translate-x-1/2 z-10
