@@ -1,10 +1,12 @@
 import {ShoppingCartIcon} from '@heroicons/react/20/solid';
 import {MagnifyingGlassIcon, ChevronDownIcon} from '@heroicons/react/24/outline';
-import { useState } from 'react';
+import { useState, Dispatch, SetStateAction } from 'react';
 import { useRouter } from 'next/router';
 import Search from './search';
 
-export default function DesktopNav() {
+export default function DesktopNav(
+    {toggleShowSummary, toggleShowSearch}: {toggleShowSummary: ()=>void, toggleShowSearch: ()=>void}
+) {
 
     const [insideJewelryTxt, setInsideJewelryTxt] = useState(false);
     const [insideJewelryDropdown, setInsideJewelryDropdown] = useState(false);
@@ -86,8 +88,15 @@ export default function DesktopNav() {
                 </div>
             </div>
             <div className="flex items-center pb-6">
-                <ShoppingCartIcon className="h-6 w-6 mr-6 cursor-pointer transition ease-in-out duration-300 fill-black hover:fill-blue-600"/>
-                <Search />
+                <ShoppingCartIcon 
+                    className="h-6 w-6 mr-6 cursor-pointer transition ease-in-out duration-300 fill-black hover:fill-blue-600"
+                    onClick={toggleShowSummary}
+                />
+                <MagnifyingGlassIcon 
+                    className="h-6 w-6 mr-6 cursor-pointer transition ease-in-out duration-300 stroke-black hover:stroke-blue-600"
+                    onClick={toggleShowSearch}
+                />
+                {/* <Search /> */}
             </div>
         </nav>
     )

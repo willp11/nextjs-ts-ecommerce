@@ -1,5 +1,5 @@
 import {ShoppingCartIcon} from '@heroicons/react/20/solid';
-import { Bars3Icon} from '@heroicons/react/24/outline';
+import { Bars3Icon, MagnifyingGlassIcon} from '@heroicons/react/24/outline';
 import { useState } from 'react';
 import MobileNav from './mobileNav';
 import DesktopNav from './desktopNav';
@@ -13,9 +13,15 @@ import CartSummary from './cartSummary';
 export default function Header() {
 
     const {cart} = useCart();
+
     const [showSummary, setShowSummary] = useState<boolean>(false);
     const toggleShowSummary = () => {
         setShowSummary(!showSummary);
+    }
+
+    const [showSearch, setShowSearch] = useState<boolean>(false);
+    const toggleShowSearch = () => {
+        setShowSearch(!showSearch);
     }
 
     useEffect(()=>{
@@ -42,24 +48,25 @@ export default function Header() {
                         />
                     </div>
                     <div className="flex md:hidden items-center">
-                        <div className="relative">
-                            <ShoppingCartIcon 
-                                className="h-6 w-6 mr-6 cursor-pointer transition ease-in-out duration-300 fill-black hover:fill-blue-600"
-                                onClick={toggleShowSummary}
-                            />
-                            <CartSummary showSummary={showSummary} />
-                        </div>
-                        
-                        <Search />
+                        <ShoppingCartIcon 
+                            className="h-6 w-6 mr-6 cursor-pointer transition ease-in-out duration-300 fill-black hover:fill-blue-600"
+                            onClick={toggleShowSummary}
+                        />
+                        <MagnifyingGlassIcon 
+                            className="h-6 w-6 mr-6 cursor-pointer transition ease-in-out duration-300 stroke-black hover:stroke-blue-600"
+                            onClick={toggleShowSearch}
+                        />
                         <Bars3Icon 
                             className="h-6 w-6 cursor-pointer transition ease-in-out duration-300 stroke-black hover:stroke-blue-600"
                             onClick={()=>setNavTranslate("translate-x-0")}
                         />
                     </div>
                 </div>
-                <DesktopNav />
+                <DesktopNav toggleShowSummary={toggleShowSummary} toggleShowSearch={toggleShowSearch}/>
             </div>
             <MobileNav translate={navTranslate} setNavTranslate={setNavTranslate} />
+            <CartSummary showSummary={showSummary} />
+            <Search showSearch={showSearch} />
         </header>
     )
 }
