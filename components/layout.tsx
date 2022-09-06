@@ -8,11 +8,11 @@ export default function Layout({
 }) {
     return (
         <div>
-            <Header />
-            <div className="w-full min-h-[calc(100vh-6.5rem)] md:min-h-[calc(100vh-10.25rem)] bg-[#f0f4ff]">
+            <div className="relative w-full min-h-[100vh] bg-[#f0f4ff] flex flex-col justify-between">
+                <Header />
                 {children}
+                <Footer />
             </div>
-            <Footer />
         </div>
     )
 }

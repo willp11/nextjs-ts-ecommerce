@@ -1,4 +1,4 @@
-import earrings from '../products/earrings.json';
+import {earrings} from '../products/earrings';
 import ProductsPage from '../components/productsPage';
 import Head from 'next/head';
 
@@ -10,7 +10,7 @@ export default function Earrings() {
                 <title>Earrings</title>
                 <meta name="description" content="high-quality jewelry, earrings" />
             </Head>
-            <ProductsPage title="Earrings" products={earrings.earrings} />
+            <ProductsPage title="Earrings" products={earrings} />
         </>
     )
 }

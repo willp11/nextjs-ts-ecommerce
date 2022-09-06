@@ -1,14 +1,16 @@
 import { Product } from "../types/product";
 import Image from "next/image";
 import { useCart } from "../hooks/useCart";
+import { useRouter } from "next/router";
 
 export default function ProductCard({product}: {product: Product}) {
 
     const {addItem} = useCart();
+    const router = useRouter();
 
     return (
         <div className="group h-[24rem] w-[18rem] w-[300px] bg-gray-50 m-2 border border-gray-300 rounded shadow-md">
-            <div className="h-2/3 w-full flex items-center justify-center cursor-pointer">
+            <div onClick={()=>router.push(`/product/${product.id}`)} className="h-2/3 w-full flex items-center justify-center cursor-pointer">
                 <div className="relative w-3/4 h-3/4 group-hover:transform group-hover:scale-125 group-hover:ease-in-out group-hover:duration-500">
                     {product?.image && <Image
                         src={product.image}
@@ -20,7 +22,9 @@ export default function ProductCard({product}: {product: Product}) {
             </div>
             <div className="h-1/3 w-full p-4">
                 <div className="h-1/3 w-full">
-                    <p className="font-semibold truncate cursor-pointer hover:text-blue-600">{product.name}</p>
+                    <p onClick={()=>router.push(`/product/${product.id}`)} className="font-semibold truncate cursor-pointer hover:text-blue-600">
+                        {product.name}
+                    </p>
                 </div>
                 <div className="h-2/3 w-full flex justify-between items-center">
                     <div className="flex flex-col">

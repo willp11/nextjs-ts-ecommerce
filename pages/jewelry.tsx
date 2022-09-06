@@ -1,13 +1,8 @@
-import products from '../products/products.json';
+import {products} from '../products/products';
 import ProductsPage from '../components/productsPage';
 import Head from 'next/head';
-import { useEffect } from 'react';
 
 export default function Jewelry() {
-
-    useEffect(()=>{
-        console.log(products);
-    }, [])
 
     return (
         <>
@@ -15,7 +10,7 @@ export default function Jewelry() {
                 <title>Jewelry</title>
                 <meta name="description" content="high-quality jewelry, rings, necklaces, bracelets, earrings" />
             </Head>
-            <ProductsPage title="Jewelry" products={products.products} />
+            <ProductsPage title="Jewelry" products={products} />
         </>
     )
 }
