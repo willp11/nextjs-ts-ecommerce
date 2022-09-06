@@ -34,7 +34,7 @@ export default function Header() {
 
     return (
         <header className="w-full bg-white">
-            <div className="w-full max-w-[1200px] mx-auto flex flex-col items-center justify-center px-2 xs:px-4 pt-2">
+            <div className="relative w-full max-w-[1200px] mx-auto flex flex-col items-center justify-center px-2 xs:px-4 pt-2">
                 <div className="w-full flex items-center justify-between p-2 mb-2">
                     <div
                         onClick={()=>router.push('/')}
@@ -63,10 +63,10 @@ export default function Header() {
                     </div>
                 </div>
                 <DesktopNav toggleShowSummary={toggleShowSummary} toggleShowSearch={toggleShowSearch}/>
+                <MobileNav translate={navTranslate} setNavTranslate={setNavTranslate} />
+                <CartSummary showSummary={showSummary} />
+                <Search showSearch={showSearch} />
             </div>
-            <MobileNav translate={navTranslate} setNavTranslate={setNavTranslate} />
-            <CartSummary showSummary={showSummary} />
-            <Search showSearch={showSearch} />
         </header>
     )
 }
