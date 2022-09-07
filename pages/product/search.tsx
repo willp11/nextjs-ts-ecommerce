@@ -14,8 +14,9 @@ export default function Search() {
 
     useEffect(()=>{
         const product = query?.product;
-        if (typeof product === "string") {
-            let res: Product[] = searchProducts(product, products);
+        const category = query?.category;
+        if (typeof product === "string" && typeof category === "string") {
+            let res: Product[] = searchProducts(product, category, products);
             setResults(res);
         }
     }, [query]);

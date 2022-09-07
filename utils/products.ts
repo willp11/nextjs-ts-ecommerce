@@ -15,7 +15,7 @@ export const getProductData = (id: string, products: Product[]) => {
     return product;
 }
 
-export const searchProducts = (name: string, products: Product[]) => {
+export const searchProducts = (name: string, category: string, products: Product[]) => {
     if (name === "") return [];
     // get all words in search term
     name = name.toLowerCase();
@@ -34,10 +34,14 @@ export const searchProducts = (name: string, products: Product[]) => {
                 const word = words[i].slice(0, w.length);
                 if (word === w && !(product.id in foundIds)) {
                     foundIds[product.id] = 1
-                    return true;
+                    if (category === "All") {
+                        return true;
+                    } else {
+                        if (product.categories.includes(category)) return true;
+                    }
                 }
             }
-            return false
+            return false;
         })
 
         productList.push(...productsFound)

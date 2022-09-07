@@ -25,7 +25,7 @@ export default function CartSummary({showSummary}: {showSummary: boolean}) {
 
     if (!isSSR) { 
         return (
-            <div className={`absolute right-0 z-20 p-4 w-[100vw] max-w-[500px] max-h-[500px] overflow-auto top-[7rem] md:top-[10rem]
+            <div className={`absolute right-0 z-20 p-4 w-[100vw] max-w-[500px] max-h-[500px] overflow-auto top-[7rem] md:top-[10.25rem]
                             ${showSummary ? "flex" : "hidden"} flex-col items-center
                             bg-white border border-gray-300 rounded shadow-md`}>
                 {cart?.total_qty === 0 && <p className="text-base p-2 text-gray-500">Your cart is currently empty.</p>}
