@@ -21,7 +21,7 @@ export async function getStaticProps({ params }: { params: {id: string}}) {
 
 export default function BlogPost({post}: {post: IBlogPost}) {
     return (
-        <div className="w-full max-w-[1200px] mx-auto p-4">
+        <div className="w-full max-w-[1200px] mx-auto px-6 py-0">
             <div className="w-full max-w-[768px] p-4 bg-white border border-gray-200 shadow-md mt-8 mb-8 rounded-md">
                 <h2 className="text-2xl tracking-tighter font-semibold mb-2">{post.title}</h2>
                 <p>{`on ${post.date} by ${post.author}`}</p>

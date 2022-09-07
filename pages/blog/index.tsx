@@ -16,7 +16,7 @@ export default function Blog() {
                 <title>Blog</title>
                 <meta name="description" content="what is a wedding ring? how to choose an engagement ring?" />
             </Head>
-            <div className="w-full p-4">
+            <div className="w-full px-6 py-0">
                 {posts}
             </div>
         </div>
