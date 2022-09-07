@@ -24,3 +24,8 @@ class ProductByCategoryView(ListAPIView):
     def get_queryset(self):
         category = self.kwargs['category']
         return ProductCategories.objects.filter(category=category)
+
+class CategoryListView(ListAPIView):
+    queryset = Category.objects.all()
+    serializer_class = CategoryNameSerializer
+    permission_classes = [AllowAny]
