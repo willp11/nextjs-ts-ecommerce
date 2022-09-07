@@ -1,6 +1,6 @@
 import Head from "next/head";
-import {blogPosts} from "../posts/blog.js";
-import BlogPreview from "../components/blogPreview";
+import {blogPosts} from "../../posts/blog.js";
+import BlogPreview from "../../components/blogPreview";
 
 export default function Blog() {
 
@@ -11,7 +11,7 @@ export default function Blog() {
     })
 
     return (    
-        <div className="w-full max-w-[1200px] mx-auto py-8">
+        <div className="w-full max-w-[1200px] mx-auto">
             <Head>
                 <title>Blog</title>
                 <meta name="description" content="what is a wedding ring? how to choose an engagement ring?" />
