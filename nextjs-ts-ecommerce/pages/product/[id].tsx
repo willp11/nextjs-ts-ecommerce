@@ -5,9 +5,10 @@ import Image from 'next/image';
 import {MinusIcon, PlusIcon} from '@heroicons/react/24/outline';
 import { Product } from "../../types/product";
 import { getProductIds, getProductData } from '../../utils/products';
-import {products} from "../../products/products";
+import { fetchProducts } from "../../utils/products";
 
 export async function getStaticPaths() {
+    const products = await fetchProducts();
     const paths = getProductIds(products);
     return {
         paths,
@@ -16,6 +17,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }: {params: {id: string}}) {
+    const products = await fetchProducts();
     const product = getProductData(params.id, products);
     return {
         props: {

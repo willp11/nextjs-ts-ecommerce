@@ -20,7 +20,7 @@ export default function Search({showSearch}: {showSearch: boolean}) {
     const router = useRouter();
 
     const [searchQuery, setSearchQuery] = useState<string>("");
-    const [selectedCategory, setSelectedCategory] = useState<string>("");
+    const [selectedCategory, setSelectedCategory] = useState<string>("All");
 
     const submitSearch = (e: any) => {
         e.preventDefault();

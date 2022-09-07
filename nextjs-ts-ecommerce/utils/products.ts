@@ -1,5 +1,17 @@
-import { Product } from "../types/product"
+import { Product } from "../types/product";
+import axios from 'axios';
+import { apiPrefix } from '../utils/apiPrefix';
 
+// Fetch all products from API
+export const fetchProducts = async () : Promise<Product[]> => {
+    const headers = {'Content-Type': 'application/json'};
+    const url = `${apiPrefix}product-list-get/`;
+    const res = await axios.get(url, {headers: headers});
+    const products = res.data;
+    return products;
+}
+
+// Get all product IDs - for getStaticPaths in product/<id> page
 export const getProductIds = (products: Product[]) => {
     return products.map(product=>{
         return {
@@ -10,13 +22,20 @@ export const getProductIds = (products: Product[]) => {
     })
 }
 
+// Get product data - for getStaticProps in product/<id> page
 export const getProductData = (id: string, products: Product[]) => {
     const product = products.find(product => product.id === parseInt(id)) ?? null;
     return product;
 }
 
-export const searchProducts = (name: string, category: string, products: Product[]) => {
+// Find products given a product name, category and product list
+export const searchProducts = async (name: string, category: string) : Promise<Product[]> => {
+    // return empty array if don't provide search term
     if (name === "") return [];
+
+    // get products from API
+    const products = await fetchProducts();
+
     // get all words in search term
     name = name.toLowerCase();
     const searchWords = name.split(" ");
@@ -37,7 +56,11 @@ export const searchProducts = (name: string, category: string, products: Product
                     if (category === "All") {
                         return true;
                     } else {
-                        if (product.categories.includes(category)) return true;
+                        let found = false;
+                        product.categories.forEach((cat)=>{
+                            if (cat.category.name === category) found = true;
+                        })
+                        return found;
                     }
                 }
             }

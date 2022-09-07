@@ -1,6 +1,5 @@
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import { products } from '../../products/products';
 import ProductsPage from '../../components/productsPage';
 import Head from 'next/head';
 import { Product } from '../../types/product';
@@ -13,12 +12,15 @@ export default function Search() {
     const [results, setResults] = useState<Product[]>([]);
 
     useEffect(()=>{
-        const product = query?.product;
-        const category = query?.category;
-        if (typeof product === "string" && typeof category === "string") {
-            let res: Product[] = searchProducts(product, category, products);
-            setResults(res);
+        const search = async () => {
+            const product = query?.product;
+            const category = query?.category;
+            if (typeof product === "string" && typeof category === "string") {
+                let res: Product[] = await searchProducts(product, category);
+                setResults(res);
+            }
         }
+        search();
     }, [query]);
 
     return (
