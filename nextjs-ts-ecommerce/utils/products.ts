@@ -1,4 +1,4 @@
-import { Product } from "../types/product";
+import { Product, CategoryProduct } from "../types/product";
 import axios from 'axios';
 import { apiPrefix } from '../utils/apiPrefix';
 
@@ -6,6 +6,15 @@ import { apiPrefix } from '../utils/apiPrefix';
 export const fetchProducts = async () : Promise<Product[]> => {
     const headers = {'Content-Type': 'application/json'};
     const url = `${apiPrefix}product-list-get/`;
+    const res = await axios.get(url, {headers: headers});
+    const products = res.data;
+    return products;
+}
+
+// Fetch products by category from API
+export const fetchProductsByCategory = async (categoryId: number) : Promise<CategoryProduct[]> => {
+    const headers = {'Content-Type': 'application/json'};
+    const url = `${apiPrefix}products-by-category-get/${categoryId}/`;
     const res = await axios.get(url, {headers: headers});
     const products = res.data;
     return products;
@@ -51,8 +60,10 @@ export const searchProducts = async (name: string, category: string) : Promise<P
             // iterate over all words in the product name
             for (let i=0; i<words.length; i++) {
                 const word = words[i].slice(0, w.length);
+                // if word matches the search term and not already been found
                 if (word === w && !(product.id in foundIds)) {
                     foundIds[product.id] = 1
+                    // ensure it is within the correct category
                     if (category === "All") {
                         return true;
                     } else {

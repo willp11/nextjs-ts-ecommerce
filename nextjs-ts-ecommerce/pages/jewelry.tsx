@@ -24,7 +24,7 @@ export default function Jewelry({products}: {products: Product[]}) {
                 <title>Jewelry</title>
                 <meta name="description" content="high-quality jewelry, rings, necklaces, bracelets, earrings" />
             </Head>
-            <ProductsPage title="Jewelry" products={products} />
+            <ProductsPage title="Jewelry" products={products}/>
         </>
     )
 }

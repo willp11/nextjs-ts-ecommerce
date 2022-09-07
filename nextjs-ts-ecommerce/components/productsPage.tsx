@@ -2,6 +2,7 @@ import ProductGrid from './productGrid';
 import { Product } from '../types/product';
 
 export default function ProductsPage({title, products}: {title: string, products: Product[]}) {
+
     return (
         <div className="w-full max-w-[1280px] mx-auto py-4">
             <div className="w-full max-w-[1200px] mx-auto px-6 flex flex-col items-start justify-center">

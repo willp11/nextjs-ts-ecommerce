@@ -1,8 +1,19 @@
-import {earrings} from '../products/earrings';
-import ProductsPage from '../components/productsPage';
+import CategoryProductsPage from '../components/categoryProductsPage';
 import Head from 'next/head';
+import { CategoryProduct } from '../types/product';
+import { fetchProductsByCategory } from '../utils/products';
 
-export default function Earrings() {
+export async function getStaticProps() {
+    // Earrings category has id = 3
+    const products = await fetchProductsByCategory(3);
+    return {
+        props: {
+            products
+        }
+    }
+}
+
+export default function Earrings({products}: {products: CategoryProduct[]}) {
 
     return (
         <>
@@ -10,7 +21,7 @@ export default function Earrings() {
                 <title>Earrings</title>
                 <meta name="description" content="high-quality jewelry, earrings" />
             </Head>
-            <ProductsPage title="Earrings" products={earrings} />
+            <CategoryProductsPage title="Earrings" products={products} />
         </>
     )
 }

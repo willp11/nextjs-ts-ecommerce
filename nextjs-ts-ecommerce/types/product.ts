@@ -6,3 +6,7 @@ export interface Product {
     price: number,
     image?: string
 }
+
+export interface CategoryProduct {
+    product: Product
+}
