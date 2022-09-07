@@ -8,25 +8,6 @@ class CategoryNameSerializer(ModelSerializer):
         model = Category
         fields = ('id', 'name',)
 
-# Product all info, so can be nested within CategoryProductsSerializer to get all products for a given category
-class ProductInfoSerializer(ModelSerializer):
-    class Meta:
-        model = Product
-        fields = '__all__'
-
-# Category with all products within the category
-class CategoryProductsSerializer(ModelSerializer):
-    product = ProductInfoSerializer()
-    class Meta:
-        model = ProductCategories
-        fields = ('product',)
-
-class CategorySerializer(ModelSerializer):
-    products = CategoryProductsSerializer(many=True)
-    class Meta:
-        model = Category
-        fields = '__all__'
-
 # Products with all categories it is a member of
 class ProductCategoriesSerializer(ModelSerializer):
     category = CategoryNameSerializer()
@@ -38,4 +19,18 @@ class ProductSerializer(ModelSerializer):
     categories = ProductCategoriesSerializer(many=True)
     class Meta:
         model = Product
+        fields = '__all__'
+
+# Category with all products within the category
+class CategoryProductsSerializer(ModelSerializer):
+    product = ProductSerializer()
+    class Meta:
+        model = ProductCategories
+        fields = ('product',)
+
+# Get all data on a category, including all products within the category
+class CategorySerializer(ModelSerializer):
+    products = CategoryProductsSerializer(many=True)
+    class Meta:
+        model = Category
         fields = '__all__'
