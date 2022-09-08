@@ -80,7 +80,7 @@ export default function MobileNav({translate, setNavTranslate}: MobileMenuProps)
             <div className="w-full flex flex-col">
                 <div className="w-full flex items-center justify-between px-4 pt-4 pb-0">
                     <div
-                        onClick={()=>router.push('/')}
+                        onClick={()=>handleNavigate('/')}
                         className="relative h-[80px] w-[200px] flex items-center justify-center cursor-pointer"
                     >
                         <Image
@@ -107,17 +107,16 @@ export default function MobileNav({translate, setNavTranslate}: MobileMenuProps)
                         <div className="flex flex-col items-start w-1/2">
                             <p className="text-gray-500 text-sm font-semibold py-1 pl-2">Shop By Category</p>
                             <p className="dropdown-item-mobile-menu" onClick={()=>handleNavigate('/jewelry')}>All</p>
-                            <p className="dropdown-item-mobile-menu">Rings</p>
-                            <p className="dropdown-item-mobile-menu">Necklaces</p>
-                            <p className="dropdown-item-mobile-menu">Bracelets</p>
+                            <p className="dropdown-item-mobile-menu" onClick={()=>handleNavigate('/rings')}>Rings</p>
+                            <p className="dropdown-item-mobile-menu" onClick={()=>handleNavigate('/necklaces')}>Necklaces</p>
+                            <p className="dropdown-item-mobile-menu" onClick={()=>handleNavigate('/bracelets')}>Bracelets</p>
                             <p className="dropdown-item-mobile-menu" onClick={()=>handleNavigate('/earrings')}>Earrings</p>
                         </div>
                         <div className="flex flex-col items-start w-1/2">
                             <p className="text-gray-500 text-sm font-semibold py-1 pl-2">Shop By Metal</p>
-                            <p className="dropdown-item-mobile-menu">Gold</p>
-                            <p className="dropdown-item-mobile-menu">Sterling Silver</p>
-                            <p className="dropdown-item-mobile-menu">Platinum</p>
-                            <p className="dropdown-item-mobile-menu">Stainless Steel</p>
+                            <p className="dropdown-item-mobile-menu" onClick={()=>handleNavigate('/gold')}>Gold</p>
+                            <p className="dropdown-item-mobile-menu" onClick={()=>handleNavigate('/silver')}>Sterling Silver</p>
+                            <p className="dropdown-item-mobile-menu" onClick={()=>handleNavigate('/stainlessSteel')}>Stainless Steel</p>
                         </div>
                     </div>
                 </div>
@@ -128,8 +127,8 @@ export default function MobileNav({translate, setNavTranslate}: MobileMenuProps)
                         {loveChevron}
                     </div>
                     <div ref={loveSubRef} className="w-full flex-col items-start px-2 bg-gray-50">
-                        <p className="dropdown-item-mobile-menu">Engagement Rings</p>
-                        <p className="dropdown-item-mobile-menu">Wedding Rings</p>
+                        <p className="dropdown-item-mobile-menu" onClick={()=>handleNavigate('/engagement')}>Engagement Rings</p>
+                        <p className="dropdown-item-mobile-menu" onClick={()=>handleNavigate('/wedding')}>Wedding Rings</p>
                     </div>
                 </div>
                 
@@ -137,10 +136,10 @@ export default function MobileNav({translate, setNavTranslate}: MobileMenuProps)
                     <p className="font-semibold text-base">About</p>
                 </div>
                 <div className="flex justify-start items-center p-4 cursor-pointer hover:bg-gray-100">
-                    <p className="font-semibold text-base">Contact</p>
+                    <p className="font-semibold text-base" onClick={()=>handleNavigate('/contact')}>Contact</p>
                 </div>
                 <div className="flex justify-start items-center p-4 cursor-pointer hover:bg-gray-100">
-                    <p className="font-semibold text-base">Blog</p>
+                    <p className="font-semibold text-base" onClick={()=>handleNavigate('/blog')}>Blog</p>
                 </div>
             </div>
         </nav>

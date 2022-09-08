@@ -45,17 +45,16 @@ export default function DesktopNav(
                             <div className="flex flex-col items-start w-1/2">
                                 <p className="text-gray-500 py-1 pl-2">Shop By Category</p>
                                 <p className="dropdown-item" onClick={()=>router.push('/jewelry')}>All</p>
-                                <p className="dropdown-item">Rings</p>
-                                <p className="dropdown-item">Necklaces</p>
-                                <p className="dropdown-item">Bracelets</p>
+                                <p className="dropdown-item" onClick={()=>router.push('/rings')}>Rings</p>
+                                <p className="dropdown-item" onClick={()=>router.push('/necklaces')}>Necklaces</p>
+                                <p className="dropdown-item" onClick={()=>router.push('/bracelets')}>Bracelets</p>
                                 <p className="dropdown-item" onClick={()=>router.push('/earrings')}>Earrings</p>
                             </div>
                             <div className="flex flex-col items-start w-1/2">
                                 <p className="text-gray-500 py-1 pl-2">Shop By Metal</p>
-                                <p className="dropdown-item">Gold</p>
-                                <p className="dropdown-item">Sterling Silver</p>
-                                <p className="dropdown-item">Platinum</p>
-                                <p className="dropdown-item">Stainless Steel</p>
+                                <p className="dropdown-item" onClick={()=>router.push('/gold')}>Gold</p>
+                                <p className="dropdown-item" onClick={()=>router.push('/silver')}>Sterling Silver</p>
+                                <p className="dropdown-item" onClick={()=>router.push('/stainlessSteel')}>Stainless Steel</p>
                             </div>
                         </div>
                     }
@@ -76,18 +75,18 @@ export default function DesktopNav(
                             onMouseEnter={()=>setInsideLoveDropdown(true)}
                             onMouseLeave={()=>setInsideLoveDropdown(false)}
                         >
-                            <p className="dropdown-item">Engagement Rings</p>
-                            <p className="dropdown-item">Wedding Rings</p>
+                            <p className="dropdown-item" onClick={()=>router.push('/engagement')}>Engagement Rings</p>
+                            <p className="dropdown-item" onClick={()=>router.push('/wedding')}>Wedding Rings</p>
                         </div>
                     }
                 </div>
                 <div className="nav-item cursor-pointer">
                     <p className="pb-6">About</p>
                 </div>
-                <div className="nav-item cursor-pointer">
+                <div className="nav-item cursor-pointer" onClick={()=>router.push('/blog')}>
                     <p className="pb-6">Blog</p>
                 </div>
-                <div className="nav-item cursor-pointer">
+                <div className="nav-item cursor-pointer" onClick={()=>router.push('/contact')}>
                     <p className="pb-6">Contact</p>
                 </div>
             </div>
