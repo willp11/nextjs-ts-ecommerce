@@ -5,7 +5,11 @@ module.exports = {
         "./components/**/*.{js,ts,jsx,tsx}",
     ],
     theme: {
-        extend: {},
+        extend: {
+            transitionProperty: {
+                'height': 'height'
+            }
+        },
         screens: {
             'xs': '450px',
             // => @media (min-width: 450px) { ... }

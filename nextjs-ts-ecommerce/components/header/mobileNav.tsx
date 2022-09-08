@@ -1,5 +1,5 @@
 import {XMarkIcon, ChevronDownIcon, ChevronUpIcon} from '@heroicons/react/24/outline';
-import { Dispatch, SetStateAction, useState } from "react";
+import { Dispatch, SetStateAction, useState, useRef, useEffect, useMemo } from "react";
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 
@@ -39,8 +39,41 @@ export default function MobileNav({translate, setNavTranslate}: MobileMenuProps)
     let jewelryChevron = <ChevronDownIcon className="h-6 w-6 cursor-pointer transition ease-in-out duration-300 stroke-black group-hover:stroke-blue-600" />
     if (showJewelry) jewelryChevron = <ChevronUpIcon className="h-6 w-6 cursor-pointer transition ease-in-out duration-300 stroke-black group-hover:stroke-blue-600" />
 
-    let loveChrevron = <ChevronDownIcon className="h-6 w-6 cursor-pointer transition ease-in-out duration-300 stroke-black group-hover:stroke-blue-600" />
-    if (showLove) loveChrevron = <ChevronUpIcon className="h-6 w-6 cursor-pointer transition ease-in-out duration-300 stroke-black group-hover:stroke-blue-600" />
+    let loveChevron = <ChevronDownIcon className="h-6 w-6 cursor-pointer transition ease-in-out duration-300 stroke-black group-hover:stroke-blue-600" />
+    if (showLove) loveChevron = <ChevronUpIcon className="h-6 w-6 cursor-pointer transition ease-in-out duration-300 stroke-black group-hover:stroke-blue-600" />
+
+    // transition open/close sub-menus
+    // Jewelry sub-menu
+    let jewelryHeadRef = useRef<HTMLDivElement>(null);
+    let jewelrySubRef = useRef<HTMLDivElement>(null);
+    
+    let jewelryHeight = "h-[56px]";
+    if (typeof jewelryHeadRef.current?.offsetHeight !== "undefined" ) jewelryHeight = `h-[${jewelryHeadRef.current?.offsetHeight.toString()}px]`;
+   
+    if (showJewelry && 
+        typeof jewelryHeadRef.current?.offsetHeight !== "undefined" && 
+        typeof jewelrySubRef.current?.offsetHeight !== "undefined"
+    ) 
+    {
+        jewelryHeight = `h-[${(jewelryHeadRef.current?.offsetHeight + jewelrySubRef.current?.offsetHeight).toString()}px]`
+    }
+    let jewelryClass = `${jewelryHeight} transition-height ease-in-out duration-300 overflow-hidden`;
+
+    // Love&Engagement sub-menu
+    let loveHeadRef = useRef<HTMLDivElement>(null);
+    let loveSubRef = useRef<HTMLDivElement>(null);
+    
+    let loveHeight = "h-[56px]";
+    if (typeof loveHeadRef.current?.offsetHeight !== "undefined" ) loveHeight = `h-[${loveHeadRef.current?.offsetHeight.toString()}px]`;
+   
+    if (showLove && 
+        typeof loveHeadRef.current?.offsetHeight !== "undefined" && 
+        typeof loveSubRef.current?.offsetHeight !== "undefined"
+    ) 
+    {
+        loveHeight = `h-[${(loveHeadRef.current?.offsetHeight + loveSubRef.current?.offsetHeight).toString()}px]`
+    }
+    let loveClass = `${loveHeight} transition-height ease-in-out duration-300 overflow-hidden`;
 
     return (
         <nav className={divClass}>
@@ -65,12 +98,12 @@ export default function MobileNav({translate, setNavTranslate}: MobileMenuProps)
                     </div>
                 </div>
 
-                <div onClick={toggleShowJewelry} className="flex justify-between items-center p-4 cursor-pointer hover:bg-gray-100">
-                    <p className="font-semibold text-base">Jewelry</p>
-                    {jewelryChevron}
-                </div>
-                {showJewelry && 
-                    <div className="w-full flex justify-start px-2 bg-gray-50">
+                <div className={jewelryClass}>
+                    <div ref={jewelryHeadRef} onClick={toggleShowJewelry} className="flex justify-between items-center p-4 cursor-pointer hover:bg-gray-100">
+                        <p className="font-semibold text-base">Jewelry</p>
+                        {jewelryChevron}
+                    </div>
+                    <div ref={jewelrySubRef} className={`w-full flex justify-start px-2 bg-gray-50`}>
                         <div className="flex flex-col items-start w-1/2">
                             <p className="text-gray-500 text-sm font-semibold py-1 pl-2">Shop By Category</p>
                             <p className="dropdown-item-mobile-menu" onClick={()=>handleNavigate('/jewelry')}>All</p>
@@ -87,18 +120,19 @@ export default function MobileNav({translate, setNavTranslate}: MobileMenuProps)
                             <p className="dropdown-item-mobile-menu">Stainless Steel</p>
                         </div>
                     </div>
-                }
-
-                <div onClick={toggleShowLove} className="flex justify-between items-center p-4 cursor-pointer hover:bg-gray-100">
-                    <p className="font-semibold text-base">Love & Engagement</p>
-                    {loveChrevron}
                 </div>
-                {showLove &&
-                    <div className="w-full flex-col items-start px-2 bg-gray-50">
+
+                <div className={loveClass}>
+                    <div ref={loveHeadRef} onClick={toggleShowLove} className="flex justify-between items-center p-4 cursor-pointer hover:bg-gray-100">
+                        <p className="font-semibold text-base">Love & Engagement</p>
+                        {loveChevron}
+                    </div>
+                    <div ref={loveSubRef} className="w-full flex-col items-start px-2 bg-gray-50">
                         <p className="dropdown-item-mobile-menu">Engagement Rings</p>
                         <p className="dropdown-item-mobile-menu">Wedding Rings</p>
                     </div>
-                }
+                </div>
+                
                 <div className="flex justify-start items-center p-4 cursor-pointer hover:bg-gray-100">
                     <p className="font-semibold text-base">About</p>
                 </div>

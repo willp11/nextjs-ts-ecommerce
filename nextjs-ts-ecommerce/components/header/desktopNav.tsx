@@ -31,14 +31,14 @@ export default function DesktopNav(
                     onMouseEnter={()=>setInsideJewelryTxt(true)}
                     onMouseLeave={()=>setInsideJewelryTxt(false)}
                 >
-                    <div className="flex pb-6 items-center">
+                    <div className="flex pb-6 items-center cursor-pointer">
                         <p>Jewelry</p>
                         <ChevronDownIcon className="h-4 w-4 ml-2 cursor-pointer transition ease-in-out duration-300 stroke-black group-hover:stroke-blue-600" />
                     </div>
                     
                     {(insideJewelryTxt || insideJewelryDropdown) && 
                         <div 
-                            className="absolute top-12 w-[400px] bg-white border border-gray-200 shadow-md flex flex-row justify-start z-10"
+                            className="absolute top-12 w-[400px] bg-white border border-gray-200 shadow-md flex flex-row justify-start z-10 cursor-default"
                             onMouseEnter={()=>setInsideJewelryDropdown(true)}
                             onMouseLeave={()=>setInsideJewelryDropdown(false)}
                         >   
@@ -65,7 +65,7 @@ export default function DesktopNav(
                     onMouseEnter={()=>setInsideLoveTxt(true)}
                     onMouseLeave={()=>setInsideLoveTxt(false)}
                 >
-                    <div className="flex pb-6 items-center">
+                    <div className="flex pb-6 items-center cursor-pointer">
                         <p>Love & Engagement</p>
                         <ChevronDownIcon className="h-4 w-4 ml-2 cursor-pointer transition ease-in-out duration-300 stroke-black group-hover:stroke-blue-600" />
                     </div>
@@ -81,13 +81,13 @@ export default function DesktopNav(
                         </div>
                     }
                 </div>
-                <div className="nav-item">
+                <div className="nav-item cursor-pointer">
                     <p className="pb-6">About</p>
                 </div>
-                <div className="nav-item">
+                <div className="nav-item cursor-pointer">
                     <p className="pb-6">Blog</p>
                 </div>
-                <div className="nav-item">
+                <div className="nav-item cursor-pointer">
                     <p className="pb-6">Contact</p>
                 </div>
             </div>

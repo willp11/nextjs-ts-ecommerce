@@ -31,10 +31,10 @@ a {
 
 @layer base {
     .nav-item {
-        @apply pr-12 font-semibold cursor-pointer hover:text-blue-600 transition ease-in-out duration-300
+        @apply pr-12 font-semibold hover:text-blue-600 transition ease-in-out duration-300
     }
     .dropdown-item {
-        @apply text-sm font-semibold text-black py-2 pl-2 hover:bg-gray-100 w-full
+        @apply text-sm font-semibold text-black py-2 pl-2 hover:bg-gray-100 w-full cursor-pointer
     }
     .dropdown-item-mobile-menu {
         @apply cursor-pointer text-sm font-semibold text-black py-1 pl-2 hover:bg-gray-100 w-full hover:text-blue-600
