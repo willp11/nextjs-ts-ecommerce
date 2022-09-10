@@ -11,6 +11,7 @@ class Product(models.Model):
     name = models.CharField(max_length=256, unique=True)
     price = models.FloatField(validators=[validate_not_negative])
     image = models.ImageField(upload_to='products/')
+    stripeId = models.CharField(max_length=128, unique=True, null=True)
 
     def __str__(self):
         return self.name
