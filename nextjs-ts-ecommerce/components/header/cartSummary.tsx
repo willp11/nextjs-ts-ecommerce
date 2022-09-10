@@ -1,6 +1,8 @@
 import { useCart } from "../../hooks/useCart";
 import CartItem from "./cartItem";
 import {useState, useEffect} from 'react';
+import getStripe from '../../utils/get-stripe';
+import axios from 'axios';
 
 export default function CartSummary({showSummary}: {showSummary: boolean}) {
 
@@ -11,6 +13,21 @@ export default function CartSummary({showSummary}: {showSummary: boolean}) {
     useEffect(() => {
         setIsSSR(false);
     }, []);
+
+    const redirectToCheckout = async () => {
+        if (typeof cart !== "undefined") {
+            const {
+                data: { id },
+            } = await axios.post('/api/checkout_sessions', {
+                items: Object.entries(cart.items).map(([_, {stripeId, quantity}]) => ({
+                    price: stripeId,
+                    quantity
+                }))
+            })
+            const stripe = await getStripe();
+            await stripe.redirectToCheckout({sessionId: id});
+        }
+    }
 
     let cartItems = null;
     if (cart) {
@@ -42,7 +59,7 @@ export default function CartSummary({showSummary}: {showSummary: boolean}) {
                 </div>}
                 <button 
                     className={`p-2 mt-2 bg-blue-600 text-white text-sm font-semibold hover:bg-blue-700 transition ease-in-out duration-300 rounded ${checkoutBtnCursor}`}
-                    // onClick={redirectToCheckout}
+                    onClick={redirectToCheckout}
                     disabled={cart?.total_qty === 0}
                 >
                     Go to checkout

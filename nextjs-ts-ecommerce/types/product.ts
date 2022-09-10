@@ -4,7 +4,8 @@ export interface Product {
     materials: string[],
     categories: {category: {id: number, name: string}}[],
     price: number,
-    image?: string
+    image?: string,
+    stripeId: string
 }
 
 export interface CategoryProduct {
