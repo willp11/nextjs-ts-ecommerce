@@ -6,7 +6,7 @@ export default function Hero() {
     const router = useRouter();
 
     return (
-        <div className="w-full max-w-[1280px] mx-auto h-[calc(100vh-6.5rem)] md:h-[calc(100vh-10.25rem)] bg-[#f0f4ff] flex flex-col-reverse lg:flex-row px-4">
+        <div className="w-full max-w-[1280px] mx-auto h-[calc(100vh-5.75rem)] md:h-[calc(100vh-9.75rem)] bg-[#f0f4ff] flex flex-col-reverse lg:flex-row px-4">
             <div className="w-full h-1/2 lg:w-1/2 xl:w-2/5 lg:h-full flex flex-col items-center justify-start lg:justify-center">
                 <h1 className="text-[2rem] xs:text-[2.4rem] sm:text-[3.2rem] text-center font-bold tracking-tight my-4">Grace Collection</h1>
                 <p className="text-base xs:text-lg sm:text-xl font-semibold">Your personal jeweler in Thailand since 1994</p>

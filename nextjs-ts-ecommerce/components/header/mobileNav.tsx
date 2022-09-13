@@ -43,41 +43,11 @@ export default function MobileNav({translate, setNavTranslate}: MobileMenuProps)
     if (showLove) loveChevron = <ChevronUpIcon className="h-6 w-6 cursor-pointer transition ease-in-out duration-300 stroke-black group-hover:stroke-blue-600" />
 
     // transition open/close sub-menus
+    let jewelryClass = "h-[56px] transition-height ease-in-out duration-300 overflow-hidden";
+    if (showJewelry) jewelryClass = "h-[224px] transition-height ease-in-out duration-300 overflow-hidden";
 
-    let jewelryHeight = "h-[56px]";
-    if (showJewelry) jewelryHeight = "h-[224px]";
-    let jewelryClass = `${jewelryHeight} transition-height ease-in-out duration-300 overflow-hidden`;
-
-    let loveHeight = "h-[56px]";
-    if (showLove) loveHeight = "h-[112px]";
-    let loveClass = `${loveHeight} transition-height ease-in-out duration-300 overflow-hidden`;
-
-    // DYNAMIC IS BROKEN
-    // let jewelryHeadRef = useRef<HTMLDivElement>(null);
-    // let jewelrySubRef = useRef<HTMLDivElement>(null);
-
-    // if (typeof jewelryHeadRef.current?.offsetHeight !== "undefined" ) jewelryHeight = `h-[${jewelryHeadRef.current?.offsetHeight.toString()}px]`;
-   
-    // if (showJewelry && 
-    //     typeof jewelryHeadRef.current?.offsetHeight !== "undefined" && 
-    //     typeof jewelrySubRef.current?.offsetHeight !== "undefined"
-    // ) 
-    // {
-    //     jewelryHeight = `h-[${(jewelryHeadRef.current?.offsetHeight + jewelrySubRef.current?.offsetHeight).toString()}px]`
-    // }
-
-    // let loveHeadRef = useRef<HTMLDivElement>(null);
-    // let loveSubRef = useRef<HTMLDivElement>(null);
-
-    // if (typeof loveHeadRef.current?.offsetHeight !== "undefined" ) loveHeight = `h-[${loveHeadRef.current?.offsetHeight.toString()}px]`;
-   
-    // if (showLove && 
-    //     typeof loveHeadRef.current?.offsetHeight !== "undefined" && 
-    //     typeof loveSubRef.current?.offsetHeight !== "undefined"
-    // ) 
-    // {
-    //     loveHeight = `h-[${(loveHeadRef.current?.offsetHeight + loveSubRef.current?.offsetHeight).toString()}px]`
-    // }
+    let loveClass = "h-[56px] transition-height ease-in-out duration-300 overflow-hidden";
+    if (showLove) loveClass = "h-[112px] transition-height ease-in-out duration-300 overflow-hidden";
 
     return (
         <nav className={divClass}>
