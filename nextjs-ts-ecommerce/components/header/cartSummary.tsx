@@ -3,12 +3,14 @@ import CartItem from "./cartItem";
 import {useState, useEffect} from 'react';
 import getStripe from '../../utils/get-stripe';
 import axios from 'axios';
+import Spinner from "../spinner";
 
 export default function CartSummary({showSummary}: {showSummary: boolean}) {
 
     const {cart, clearCart} = useCart();
 
     const [isSSR, setIsSSR] = useState(true);
+    const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
         setIsSSR(false);
@@ -16,6 +18,7 @@ export default function CartSummary({showSummary}: {showSummary: boolean}) {
 
     const redirectToCheckout = async () => {
         if (typeof cart !== "undefined") {
+            setIsLoading(true);
             const {
                 data: { id },
             } = await axios.post('/api/checkout_sessions', {
@@ -26,6 +29,7 @@ export default function CartSummary({showSummary}: {showSummary: boolean}) {
             })
             const stripe = await getStripe();
             await stripe.redirectToCheckout({sessionId: id});
+            setIsLoading(false);
         }
     }
 
@@ -58,11 +62,12 @@ export default function CartSummary({showSummary}: {showSummary: boolean}) {
                     <p className="dark:text-gray-100 text-lg font-semibold">${cart?.value}</p>
                 </div>}
                 <button 
-                    className={`p-2 mt-2 bg-blue-600 text-white text-sm font-semibold hover:bg-blue-700 transition ease-in-out duration-300 rounded ${checkoutBtnCursor}`}
+                    className={`p-2 mt-2 bg-blue-600 text-white text-sm font-semibold hover:bg-blue-700 transition ease-in-out duration-300 rounded ${checkoutBtnCursor} flex`}
                     onClick={redirectToCheckout}
                     disabled={cart?.total_qty === 0}
                 >
                     Go to checkout
+                    {isLoading && <div className="ml-2"><Spinner size="small" /></div>}
                 </button>
             </div>
         )
