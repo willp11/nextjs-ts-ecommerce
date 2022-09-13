@@ -43,15 +43,18 @@ export default function MobileNav({translate, setNavTranslate}: MobileMenuProps)
     if (showLove) loveChevron = <ChevronUpIcon className="h-6 w-6 cursor-pointer transition ease-in-out duration-300 stroke-black group-hover:stroke-blue-600" />
 
     // transition open/close sub-menus
-    // Jewelry sub-menu
 
-    // BROKEN
-    // let jewelryHeadRef = useRef<HTMLDivElement>(null);
-    // let jewelrySubRef = useRef<HTMLDivElement>(null);
-    
     let jewelryHeight = "h-[56px]";
     if (showJewelry) jewelryHeight = "h-[224px]";
     let jewelryClass = `${jewelryHeight} transition-height ease-in-out duration-300 overflow-hidden`;
+
+    let loveHeight = "h-[56px]";
+    if (showLove) loveHeight = "h-[112px]";
+    let loveClass = `${loveHeight} transition-height ease-in-out duration-300 overflow-hidden`;
+
+    // DYNAMIC IS BROKEN
+    // let jewelryHeadRef = useRef<HTMLDivElement>(null);
+    // let jewelrySubRef = useRef<HTMLDivElement>(null);
 
     // if (typeof jewelryHeadRef.current?.offsetHeight !== "undefined" ) jewelryHeight = `h-[${jewelryHeadRef.current?.offsetHeight.toString()}px]`;
    
@@ -63,15 +66,9 @@ export default function MobileNav({translate, setNavTranslate}: MobileMenuProps)
     //     jewelryHeight = `h-[${(jewelryHeadRef.current?.offsetHeight + jewelrySubRef.current?.offsetHeight).toString()}px]`
     // }
 
-    // Love&Engagement sub-menu
     // let loveHeadRef = useRef<HTMLDivElement>(null);
     // let loveSubRef = useRef<HTMLDivElement>(null);
-    
-    let loveHeight = "h-[56px]";
-    if (showLove) loveHeight = "h-[112px]";
-    let loveClass = `${loveHeight} transition-height ease-in-out duration-300 overflow-hidden`;
 
-    // BROKEN
     // if (typeof loveHeadRef.current?.offsetHeight !== "undefined" ) loveHeight = `h-[${loveHeadRef.current?.offsetHeight.toString()}px]`;
    
     // if (showLove && 
@@ -88,10 +85,10 @@ export default function MobileNav({translate, setNavTranslate}: MobileMenuProps)
                 <div className="w-full flex items-center justify-between px-4 pt-4 pb-0">
                     <div
                         onClick={()=>handleNavigate('/')}
-                        className="relative h-[80px] w-[200px] flex items-center justify-center cursor-pointer"
+                        className="relative h-[68px] w-[68px] xs:h-[80px] xs:w-[80px] flex items-center justify-center cursor-pointer"
                     >
                         <Image
-                            src="/images/Nova-Logo.svg"
+                            src="/images/Grace.png"
                             layout="fill"
                             objectFit="contain"
                             alt="Logo"

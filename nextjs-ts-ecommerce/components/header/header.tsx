@@ -39,10 +39,10 @@ export default function Header() {
                 <div className="w-full flex items-center justify-between p-2 mb-2">
                     <div
                         onClick={()=>router.push('/')}
-                        className="relative h-[68px] w-[170px] xs:h-[80px] xs:w-[200px] flex items-center justify-center cursor-pointer"
+                        className="relative h-[68px] w-[68px] xs:h-[80px] xs:w-[80px] flex items-center justify-center cursor-pointer"
                     >
                         <Image
-                            src="/images/Nova-Logo.svg"
+                            src="/images/Grace.png"
                             layout="fill"
                             objectFit="contain"
                             alt="Logo"

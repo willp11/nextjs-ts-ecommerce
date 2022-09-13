@@ -9,7 +9,7 @@ export default function Layout({
     children: React.ReactNode
 }) {
 
-    const {message, setMessage} = useMessage();
+    const {message} = useMessage();
 
     return (
         <div>
