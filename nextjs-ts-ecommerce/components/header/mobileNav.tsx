@@ -137,7 +137,7 @@ export default function MobileNav({translate, setNavTranslate}: MobileMenuProps)
                 </div>
                 
                 <div className="flex justify-start items-center p-4 cursor-pointer hover:bg-gray-100">
-                    <p className="font-semibold text-base">About</p>
+                    <p className="font-semibold text-base" onClick={()=>handleNavigate('/about')}>About</p>
                 </div>
                 <div className="flex justify-start items-center p-4 cursor-pointer hover:bg-gray-100">
                     <p className="font-semibold text-base" onClick={()=>handleNavigate('/contact')}>Contact</p>

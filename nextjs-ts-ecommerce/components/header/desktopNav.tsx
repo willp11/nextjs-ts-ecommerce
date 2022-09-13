@@ -80,7 +80,7 @@ export default function DesktopNav(
                         </div>
                     }
                 </div>
-                <div className="nav-item cursor-pointer">
+                <div className="nav-item cursor-pointer" onClick={()=>router.push('/about')}>
                     <p className="pb-6">About</p>
                 </div>
                 <div className="nav-item cursor-pointer" onClick={()=>router.push('/blog')}>

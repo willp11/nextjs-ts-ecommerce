@@ -1,4 +1,10 @@
+import { useState } from "react";
+import Spinner from "../components/spinner";
+
 export default function Contact() {
+
+    const [mapLoaded, setMapLoaded] = useState(false);
+
     return (
         <div className="w-full max-w-[1200px] mx-auto flex flex-col items-center justify-center px-6 py-4">
             <div className="w-full flex flex-col lg:flex-row items-start">
@@ -20,13 +26,14 @@ export default function Contact() {
                         <p>10:00am - 6:00pm</p>
                     </div>
                 </div>
-                
+                {!mapLoaded && <Spinner />}
                 <iframe 
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3777.6466482504816!2d98.97306701538157!3d18.76931396641701!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30da3064a3be5e37%3A0x8f23ed4e32a53d60!2sCentral%20Chiang%20Mai%20Airport!5e0!3m2!1sen!2sth!4v1663042260623!5m2!1sen!2sth" 
                     width="600" 
                     height="450" 
                     className="w-full max-w-[768px] border-0"
-                    loading="lazy" 
+                    loading="lazy"
+                    onLoad={()=>setMapLoaded(true)}
                 >
                 </iframe>
             </div>
