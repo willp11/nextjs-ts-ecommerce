@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'products.apps.ProductsConfig',
 
     # 3rd party
+    'storages',
     'corsheaders',
     'rest_framework'
 ]
