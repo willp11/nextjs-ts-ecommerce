@@ -12,7 +12,7 @@ export default function CategoryProductsPage({title, products}: {title: string, 
             prods.push(prod.product);
         })
         setProductList(prods);
-    }, [])
+    }, [products])
 
     return (
         <div className="w-full max-w-[1280px] mx-auto py-4">

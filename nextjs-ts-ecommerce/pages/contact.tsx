@@ -33,7 +33,7 @@ export default function Contact() {
                     height="450" 
                     className="w-full max-w-[768px] border-0"
                     loading="lazy"
-                    onLoad={()=>setMapLoaded(true)}
+                    onLoad={()=>setMapLoaded(true)} // eslint-disable-line react/no-unknown-property
                 >
                 </iframe>
             </div>

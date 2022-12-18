@@ -6,7 +6,7 @@ export default function Blog() {
 
     const posts = blogPosts.map((post)=>{
         return (
-            <BlogPreview post={post} />
+            <BlogPreview post={post} key={post.id} />
         )
     })
 
