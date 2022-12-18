@@ -34,6 +34,7 @@ export default function ProductCard({product}: {product: Product}) {
                     <button 
                         className="border border-gray-300 bg-white rounded p-2 font-semibold transition ease-in-out duration-300 hover:bg-blue-600 hover:text-white"
                         onClick={()=>addItem(product, 1)}
+                        aria-label={`add ${product.name} to cart`}
                     >
                         Add to cart
                     </button>

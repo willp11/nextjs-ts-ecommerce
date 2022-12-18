@@ -41,7 +41,7 @@ export default function Search({showSearch}: {showSearch: boolean}) {
     )
 
     return (
-        <div className={`absolute z-10 right-0 p-4 w-[100vw] max-w-[500px] top-[7rem] md:top-[10.25rem]
+        <div className={`absolute z-10 right-0 p-4 w-[100vw] max-w-[500px] top-[5.75rem] md:top-[9.75rem]
                         ${showSearch ? "flex" : "hidden"} flex flex-col items-center justify-center
                         bg-white border border-gray-300 rounded shadow-md`}
         >   <div className="w-[280px] mb-4 flex flex-col items-start">

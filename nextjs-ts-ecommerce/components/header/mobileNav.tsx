@@ -53,7 +53,8 @@ export default function MobileNav({translate, setNavTranslate}: MobileMenuProps)
         <nav className={divClass}>
             <div className="w-full flex flex-col">
                 <div className="w-full flex items-center justify-between px-4 pt-4 pb-0">
-                    <div
+                    <button
+                        aria-label="go to home page"
                         onClick={()=>handleNavigate('/')}
                         className="relative h-[68px] w-[68px] xs:h-[80px] xs:w-[80px] flex items-center justify-center cursor-pointer"
                     >
@@ -63,13 +64,12 @@ export default function MobileNav({translate, setNavTranslate}: MobileMenuProps)
                             objectFit="contain"
                             alt="Logo"
                         />
-                    </div>
-                    <div className="flex items-center">
+                    </button>
+                    <button aria-label="hide menu" className="flex items-center" onClick={hideHandler}>
                         <XMarkIcon 
                             className="h-[1.5rem] w-[1.5rem] cursor-pointer transition ease-in-out duration-300 stroke-black hover:stroke-blue-600" 
-                            onClick={hideHandler}
                         />
-                    </div>
+                    </button>
                 </div>
 
                 <div className={jewelryClass}>

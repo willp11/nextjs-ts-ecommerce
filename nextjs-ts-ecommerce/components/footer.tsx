@@ -1,9 +1,6 @@
 import Link from "next/link";
-import { useRouter } from "next/router";
 
 export default function Footer() {
-
-    const router = useRouter();
 
     return (
         <div className="w-full bg-white">
@@ -18,7 +15,7 @@ export default function Footer() {
                 <div className="flex flex-col sm:flex-row sm:justify-between w-full lg:w-2/3">
                     <div className="w-full p-4 lg:w-1/2 mx-auto">
                         <h2 className="text-2xl font-bold tracking-tight mb-4">Customer Service</h2>
-                        <p className="font-semibold mb-2 text-blue-700 underline cursor-pointer" onClick={()=>router.push('/contact')}>Contact Us</p>
+                        <p className="font-semibold mb-2 text-blue-700 underline cursor-pointer"><Link href="/contact"><a>Contact Us</a></Link></p>
                         <p className="font-semibold mb-2">Call Now: (+66)987654321</p>
                         <p className="font-semibold mb-2">Line: (+66)987654321</p>
                     </div>

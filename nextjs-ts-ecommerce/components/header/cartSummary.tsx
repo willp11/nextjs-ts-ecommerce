@@ -50,12 +50,14 @@ export default function CartSummary({showSummary}: {showSummary: boolean}) {
                             ${showSummary ? "flex" : "hidden"} flex-col items-center
                             bg-white border border-gray-300 rounded shadow-md`}>
                 {cart?.total_qty === 0 && <p className="text-base p-2 text-gray-500">Your cart is currently empty.</p>}
-                {cart?.total_qty !== 0 && <button 
-                                            className="text-base p-2 rounded bg-red-600 text-sm text-white font-semibold cursor-pointer hover:bg-red-700 transition ease-in-out duration-300"
-                                            onClick={clearCart}
-                                        >
-                                            Clear All
-                                        </button>}
+                {cart?.total_qty !== 0 && 
+                    <button 
+                        className="text-base p-2 rounded bg-red-600 text-sm text-white font-semibold cursor-pointer hover:bg-red-700 transition ease-in-out duration-300"
+                        onClick={clearCart}
+                    >
+                        Clear All
+                    </button>
+                }
                 {!isSSR ? cartItems : null}
                 {cart?.total_qty !== 0 && <div className="w-full my-2 px-1 flex justify-between">
                     <p className="dark:text-gray-100 text-lg font-semibold">Total:</p>
