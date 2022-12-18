@@ -17,7 +17,7 @@ export default function Contact() {
                             <p>Thailand 50100</p>
                         </div>
                         <div>
-                            <p>Tel. (+66)869472940</p>
+                            <p>Tel. (+66)987654321</p>
                         </div>
                     </div>
                     <div className="ml-0 xs:ml-8 lg:ml-0 mt-4 xs:mt-0 lg:mt-4">

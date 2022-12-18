@@ -19,8 +19,8 @@ export default function Footer() {
                     <div className="w-full p-4 lg:w-1/2 mx-auto">
                         <h2 className="text-2xl font-bold tracking-tight mb-4">Customer Service</h2>
                         <p className="font-semibold mb-2 text-blue-700 underline cursor-pointer" onClick={()=>router.push('/contact')}>Contact Us</p>
-                        <p className="font-semibold mb-2">Call Now: (+66)869472940</p>
-                        <p className="font-semibold mb-2">Line: (+66)869472940</p>
+                        <p className="font-semibold mb-2">Call Now: (+66)987654321</p>
+                        <p className="font-semibold mb-2">Line: (+66)987654321</p>
                     </div>
 
                     <div className="w-full p-4 lg:w-[220px]">
