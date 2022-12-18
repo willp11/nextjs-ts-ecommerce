@@ -6,16 +6,10 @@ import { CheckIcon } from "@heroicons/react/24/outline";
 import axios from 'axios';
 
 export default function Success() {
+
     const { query: { session_id } } = useRouter();
 
     const {clearCartOnSuccess} = useCart();
-
-    // const fetcher = (url : string) => axios.get(url).then(res => res.data);
-
-    // const { data, error } = useSWR(
-    //     () => `/api/checkout_sessions/${session_id}`,
-    //     fetcher
-    // )
 
     const [data, setData] = useState();
     const [error, setError] = useState();

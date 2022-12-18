@@ -24,7 +24,7 @@ export default function DesktopNav(
     const {cart} = useCart();
 
     return (
-        <nav className="hidden w-full md:flex items-center justify-between px-2 pt-1">
+        <nav className="hidden w-full md:flex md:items-center md:justify-between px-2 pt-1 border-gray-300">
             <div className="flex items-center">
                 <div 
                     className="relative nav-item group flex items-center"

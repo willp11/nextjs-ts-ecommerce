@@ -1,5 +1,5 @@
 import {XMarkIcon, ChevronDownIcon, ChevronUpIcon} from '@heroicons/react/24/outline';
-import { Dispatch, SetStateAction, useState, useRef, useEffect, useMemo } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 

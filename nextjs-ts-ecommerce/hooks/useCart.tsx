@@ -12,10 +12,12 @@ const initialCart: Cart = {
 
 const addItem = (state: Cart, product: Product, quantity: number) => {
     let item = state?.items?.[product.name];
+    let newItem;
     if (item) {
-        item.quantity += quantity;
+        newItem = {...item};
+        newItem.quantity += quantity;
     } else {
-        item = {
+        newItem = {
             ...product,
             quantity
         }
@@ -24,7 +26,7 @@ const addItem = (state: Cart, product: Product, quantity: number) => {
         ...state,
         items: {
             ...state.items,
-            [product.name]: item
+            [product.name]: newItem
         },
         value: Math.max(0, state.value + (product.price * quantity)),
         total_qty: Math.max(0, state.total_qty + quantity)
@@ -34,18 +36,23 @@ const addItem = (state: Cart, product: Product, quantity: number) => {
 
 const removeItem = (state: Cart, product: Product, quantity: number) => {
     let item = state?.items?.[product.name];
+    let newItem;
     if (item) {
-        item.quantity -= quantity;
+        newItem = {...item};
+        newItem.quantity -= quantity;
     } else return state;
 
     let updatedCart = {
         ...state,
         items: {
             ...state.items,
-            [product.name]: item
+            [product.name]: newItem
         },
         value: Math.max(0, state.value - (product.price * quantity)),
         total_qty: Math.max(0, state.total_qty - quantity)
+    }
+    if (newItem.quantity <= 0) {
+        delete updatedCart.items[product.name];
     }
     return updatedCart;
 }
