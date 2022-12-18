@@ -1,11 +1,10 @@
 import { Product, CategoryProduct } from "../types/product";
 import axios from 'axios';
-import { apiPrefix } from '../utils/apiPrefix';
 
 // Fetch all products from API
 export const fetchProducts = async () : Promise<Product[]> => {
     const headers = {'Content-Type': 'application/json'};
-    const url = `${apiPrefix}product-list-get/`;
+    const url = `${process.env.NEXT_PUBLIC_API_PREFIX}/product-list-get/`;
     const res = await axios.get(url, {headers: headers});
     const products = res.data;
     return products;
@@ -14,7 +13,7 @@ export const fetchProducts = async () : Promise<Product[]> => {
 // Fetch products by category from API
 export const fetchProductsByCategory = async (categoryId: number) : Promise<CategoryProduct[]> => {
     const headers = {'Content-Type': 'application/json'};
-    const url = `${apiPrefix}products-by-category-get/${categoryId}/`;
+    const url = `${process.env.NEXT_PUBLIC_API_PREFIX}/products-by-category-get/${categoryId}/`;
     const res = await axios.get(url, {headers: headers});
     const products = res.data;
     return products;
