@@ -8,6 +8,8 @@ export default function ProductCard({product}: {product: Product}) {
     const {addItem} = useCart();
     const router = useRouter();
 
+    console.log(product.image);
+
     return (
         <div className="group h-[24rem] w-[18rem] w-[300px] bg-gray-50 m-2 border border-gray-300 rounded shadow-md">
             <div onClick={()=>router.push(`/product/${product.id}`)} className="h-2/3 w-full flex items-center justify-center cursor-pointer">
