@@ -1,3 +1,6 @@
 venv
 linux_venv
 backend/.env
+db.sqlite3
+print
+__pycache__
