@@ -1,4 +1,3 @@
 venv
-.env
 linux_venv
-__pycache__
+backend/.env
