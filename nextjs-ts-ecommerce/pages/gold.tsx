@@ -4,8 +4,8 @@ import { CategoryProduct } from '../types/product';
 import { fetchProductsByCategory } from '../utils/products';
 
 export async function getStaticProps() {
-    // Gold category has id = 8
-    const products = await fetchProductsByCategory(8);
+    // Gold category has id = 3
+    const products = await fetchProductsByCategory(3);
     return {
         props: {
             products
