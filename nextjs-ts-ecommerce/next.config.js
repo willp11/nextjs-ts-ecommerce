@@ -3,7 +3,8 @@ const nextConfig = {
     reactStrictMode: true,
     swcMinify: true,
     images: {
-        domains: ['http://api-jewelry.williampage.me']
+        domains: ["api-jewelry.williampage.me"],
+        formats: ["image/webp", "image/jpeg", "image/png"],
     }
 }
 
