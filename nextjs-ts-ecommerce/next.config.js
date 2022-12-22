@@ -4,7 +4,7 @@ const nextConfig = {
     swcMinify: true,
     images: {
         domains: ["api-jewelry.williampage.me"],
-        formats: ["image/webp", "image/jpeg", "image/png"],
+        formats: ["image/webp"],
     }
 }
 
