@@ -5,7 +5,11 @@ const nextConfig = {
     images: {
         domains: ["api-jewelry.williampage.me"],
         formats: ["image/webp"],
-    }
+    },
+    i18n: {
+        locales: ["en"],
+        defaultLocale: "en",
+    },
 }
 
 module.exports = nextConfig
