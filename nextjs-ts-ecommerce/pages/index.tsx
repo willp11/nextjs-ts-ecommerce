@@ -6,7 +6,7 @@ const Home: NextPage = () => {
     return (
         <div>
             <Head>
-                <title>Jewellery Store</title>
+                <title>Grace Collection Jewelry</title>
                 <meta name="description" content="Jewellery Store. We sell rings, necklaces and bracelets." />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
