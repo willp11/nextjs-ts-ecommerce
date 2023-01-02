@@ -1,4 +1,6 @@
-export const blogPosts = [
+import { IBlogPost } from "../types/blog";
+
+export const blogPosts: IBlogPost[] = [
     {
         id: 1,
         title: "How to shop for an engagement ring",
