@@ -13,7 +13,7 @@ export async function getStaticProps() {
     }
 }
 
-export default function Earrings({products}: {products: CategoryProduct[]}) {
+export default function Rings({products}: {products: CategoryProduct[]}) {
 
     return (
         <>

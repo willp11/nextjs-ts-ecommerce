@@ -13,7 +13,7 @@ export async function getStaticProps() {
     }
 }
 
-export default function Earrings({products}: {products: CategoryProduct[]}) {
+export default function Engagement({products}: {products: CategoryProduct[]}) {
 
     return (
         <>
